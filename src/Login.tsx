@@ -41,6 +41,7 @@ const Login: React.FC<LoginProps> = () => {
     // console.log('Logging in with:', { email, password });
     try {
       const data:any = await signInWithEmailAndPassword(auth, email, password);
+      console.log('Data in login',data);
       const userToken:string = await data?.user?.accessToken;
       localStorage.setItem("token",userToken)
       alert("Login Sucessful")
